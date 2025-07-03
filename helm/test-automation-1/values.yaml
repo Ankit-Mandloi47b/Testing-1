@@ -1,0 +1,49 @@
+# Default values for sample.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+#Name
+name: sample
+
+#Replica
+replicaCount: 1
+
+#Images
+image:
+  repository: labs47b/sample
+  tag: latest
+  pullPolicy: IfNotPresent
+
+#ImageSecrets:
+imagePullSecrets:
+        - name: dockerregistryi
+
+#PodsSecurityContext
+securityContext:
+  privileged: false
+
+#ServiceType
+service: 
+  name: sample
+  port: 8000
+  Servicetype: ClusterIP
+
+#Resources
+api:
+  enabled: false
+  #resources:
+   # requests:
+    #  cpu: 2000m
+    #limits:
+     # cpu: 2000m
+
+nginx:
+  enabled: false
+  #resources:
+   # requests:
+    #  cpu: 500m
+    #limits:
+     # cpu: 500m
+
+#Stack
+stack: 1-----1
